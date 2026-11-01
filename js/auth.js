@@ -101,7 +101,7 @@ signupForm.addEventListener("submit", async function (event) {
         password: password,
 
         options: {
-            emailRedirectTo: "window.location.origin" // Change this to your app's URL
+            emailRedirectTo: "https://little-things-departments.vercel.app" // Change this to your app's URL
         }
 
     });
