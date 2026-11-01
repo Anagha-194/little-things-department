@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Little Things Department</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- DESKTOP -->
+    <!-- ============================= -->
+
+<!-- AUTHENTICATION SCREEN -->
+
+<section id="authScreen" class="auth-screen">
+
+    <div class="auth-window">
+
+        <div class="window-header">
+            <span>The Little Things Department</span>
+        </div>
+
+        <div class="auth-content">
+
+            <h2>Welcome back!</h2>
+
+            <p>A home for everything you don't want to forget.</p>
+
+            <!-- LOGIN FORM -->
+
+            <form id="loginForm">
+
+                <h3>Sign in</h3>
+
+                <label for="loginEmail">Email address</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit">Sign in</button>
+
+                <p>
+                    New here?
+                    <button type="button" id="showSignup">
+                        Create an account
+                    </button>
+                </p>
+
+            </form>
+
+
+            <!-- REGISTRATION FORM -->
+
+            <form id="signupForm" hidden>
+
+                <h3>Create your account</h3>
+
+                <label for="signupEmail">Email address</label>
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label for="signupPassword">Create password</label>
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="At least 8 characters"
+                    minlength="8"
+                    required
+                >
+
+                <button type="submit">Create account</button>
+
+                <p>
+                    Already have an account?
+                    <button type="button" id="showLogin">
+                        Sign in
+                    </button>
+                </p>
+
+            </form>
+
+            <p id="authMessage"></p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- END AUTHENTICATION SCREEN -->
+
+    <div class="desktop">
+
+        <!-- DESKTOP HEADER -->
+        <header class="desktop-header">
+            <h1>The Little Things Department</h1>
+            <p>A home for everything you don't want to forget.</p>
+        </header>
+
+
+        <!-- DESKTOP APPLICATION ICONS -->
+        <main class="desktop-icons">
+
+            <div class="desktop-icon" id="dropBoxIcon">
+                <div class="icon">📝</div>
+                <span>Drop Box</span>
+            </div>
+
+            <div class="desktop-icon" id="peopleIcon">
+                <div class="icon">👥</div>
+                <span>People Drawer</span>
+            </div>
+
+            <div class="desktop-icon" id="somedayIcon">
+                <div class="icon">📚</div>
+                <span>Someday Shelf</span>
+            </div>
+
+            <div class="desktop-icon" id="recommendationIcon">
+                <div class="icon">💌</div>
+                <span>Recommendation Box</span>
+            </div>
+
+            <div class="desktop-icon" id="recallIcon">
+                <div class="icon">🔍</div>
+                <span>Random Recall</span>
+            </div>
+
+            <div class="desktop-icon" id="settingsIcon">
+                <div class="icon">⚙️</div>
+                <span>Settings</span>
+            </div>
+
+        </main>
+
+
+        <!-- ============================= -->
+        <!-- DROP BOX WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="dropBoxWindow">
+
+            <div class="window-header">
+                <span>📝 Drop Box</span>
+                <button class="close-button" id="closeDropBox">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Your Drop Box</h2>
+
+                <p>Capture now. Organise later.</p>
+
+                <!-- ADD NEW MEMORY -->
+                <form id="dropBoxForm">
+
+                    <label for="memoryTitle">Title</label>
+                    <input
+                        type="text"
+                        id="memoryTitle"
+                        name="title"
+                        placeholder="Give your little thing a name"
+                        required
+                    >
+
+                    <label for="memoryContent">Your note</label>
+                    <textarea
+                        id="memoryContent"
+                        name="content"
+                        placeholder="Write down anything you want to remember..."
+                        rows="4"
+                        required
+                    ></textarea>
+
+                    <label for="memoryCategory">Category</label>
+                    <select id="memoryCategory" name="category">
+                        <option value="personal">Personal</option>
+                        <option value="ideas">Ideas</option>
+                        <option value="work">Work</option>
+                        <option value="study">Study</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="memoryLink">Website link (optional)</label>
+                    <input
+                        type="url"
+                        id="memoryLink"
+                        name="link"
+                        placeholder="https://example.com"
+                    >
+
+                    <button type="submit">Save to Drop Box</button>
+
+                </form>
+
+                <hr>
+
+                <h3>Saved Things</h3>
+
+                <div id="memoryList">
+                    <p class="empty-message">Nothing here yet. Add your first memory!</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- PEOPLE DRAWER WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="peopleWindow">
+
+            <div class="window-header">
+                <span>👥 People Drawer</span>
+                <button class="close-button" id="closePeople">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Your People Drawer</h2>
+
+                <p>Remember the little things about your favourite people.</p>
+
+                <form id="peopleForm">
+
+                    <label for="personName">Name</label>
+                    <input
+                        type="text"
+                        id="personName"
+                        name="name"
+                        placeholder="Their name"
+                        required
+                    >
+
+                    <label for="personBirthday">Birthday</label>
+                    <input
+                        type="date"
+                        id="personBirthday"
+                        name="birthday"
+                    >
+
+                    <label for="personInterests">Interests and favourites</label>
+                    <textarea
+                        id="personInterests"
+                        name="interests"
+                        placeholder="Favourite books, food, music, hobbies..."
+                        rows="3"
+                    ></textarea>
+
+                    <label for="personGiftIdeas">Gift ideas</label>
+                    <textarea
+                        id="personGiftIdeas"
+                        name="giftIdeas"
+                        placeholder="Things they might love..."
+                        rows="3"
+                    ></textarea>
+
+                    <label for="personNotes">Other little details</label>
+                    <textarea
+                        id="personNotes"
+                        name="notes"
+                        placeholder="Anything you don't want to forget..."
+                        rows="3"
+                    ></textarea>
+
+                    <button type="submit">Save Person</button>
+
+                </form>
+
+                <hr>
+
+                <h3>People You've Saved</h3>
+
+                <div id="peopleList">
+                    <p class="empty-message">Your people will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- SOMEDAY SHELF WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="somedayWindow">
+
+            <div class="window-header">
+                <span>📚 Someday Shelf</span>
+                <button class="close-button" id="closeSomeday">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Your Someday Shelf</h2>
+
+                <p>For all the things you want to do someday.</p>
+
+                <form id="somedayForm">
+
+                    <label for="somedayTitle">What do you want to do?</label>
+                    <input
+                        type="text"
+                        id="somedayTitle"
+                        name="title"
+                        placeholder="Visit Japan, learn pottery..."
+                        required
+                    >
+
+                    <label for="somedayType">Type</label>
+                    <select id="somedayType" name="type">
+                        <option value="places">Places to visit</option>
+                        <option value="books">Books to read</option>
+                        <option value="skills">Skills to learn</option>
+                        <option value="experiences">Experiences</option>
+                        <option value="purchases">Things to buy</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="somedayNotes">Notes</label>
+                    <textarea
+                        id="somedayNotes"
+                        name="notes"
+                        placeholder="Add a little more detail..."
+                        rows="3"
+                    ></textarea>
+
+                    <label for="somedayPriority">Priority</label>
+                    <select id="somedayPriority" name="priority">
+                        <option value="low">Whenever</option>
+                        <option value="medium">Soon</option>
+                        <option value="high">Important</option>
+                    </select>
+
+                    <button type="submit">Add to Someday Shelf</button>
+
+                </form>
+
+                <hr>
+
+                <h3>Your List</h3>
+
+                <div id="somedayList">
+                    <p class="empty-message">Your someday plans will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- RECOMMENDATION BOX WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="recommendationWindow">
+
+            <div class="window-header">
+                <span>💌 Recommendation Box</span>
+                <button class="close-button" id="closeRecommendation">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Recommendation Box</h2>
+
+                <p>Good things are meant to be remembered and shared.</p>
+
+                <form id="recommendationForm">
+
+                    <label for="recommendationTitle">What was recommended?</label>
+                    <input
+                        type="text"
+                        id="recommendationTitle"
+                        name="title"
+                        placeholder="Movie, book, restaurant..."
+                        required
+                    >
+
+                    <label for="recommendationType">Category</label>
+                    <select id="recommendationType" name="type">
+                        <option value="movies">Movies and TV</option>
+                        <option value="books">Books</option>
+                        <option value="music">Music</option>
+                        <option value="restaurants">Restaurants</option>
+                        <option value="products">Products</option>
+                        <option value="websites">Websites</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="recommendedBy">Recommended by</label>
+                    <input
+                        type="text"
+                        id="recommendedBy"
+                        name="recommendedBy"
+                        placeholder="Who told you about it?"
+                    >
+
+                    <label for="recommendationLink">Link (optional)</label>
+                    <input
+                        type="url"
+                        id="recommendationLink"
+                        name="link"
+                        placeholder="https://example.com"
+                    >
+
+                    <label for="recommendationNotes">Your notes</label>
+                    <textarea
+                        id="recommendationNotes"
+                        name="notes"
+                        placeholder="Why was it recommended?"
+                        rows="3"
+                    ></textarea>
+
+                    <button type="submit">Save Recommendation</button>
+
+                </form>
+
+                <hr>
+
+                <h3>Saved Recommendations</h3>
+
+                <div id="recommendationList">
+                    <p class="empty-message">Your recommendations will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- RANDOM RECALL WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="recallWindow">
+
+            <div class="window-header">
+                <span>🔍 Random Recall</span>
+                <button class="close-button" id="closeRecall">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>A Little Reminder</h2>
+
+                <p>Sometimes it's nice to remember something you saved.</p>
+
+                <div class="recall-card" id="recallCard">
+
+                    <p class="empty-message">
+                        Your saved memories will occasionally surprise you here.
+                    </p>
+
+                </div>
+
+                <button type="button" id="anotherRecall">
+                    Surprise Me Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- SETTINGS WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="settingsWindow">
+
+            <div class="window-header">
+                <span>⚙️ Settings</span>
+                <button class="close-button" id="closeSettings">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Settings</h2>
+
+                <h3>Account</h3>
+
+                <p>Manage your personal account and preferences.</p>
+
+                <div id="accountInformation">
+                    <p>Account information will appear here.</p>
+                </div>
+
+                <hr>
+
+                <h3>Appearance</h3>
+
+                <label for="desktopTheme">Desktop theme</label>
+
+                <select id="desktopTheme">
+                    <option value="classic">Classic Windows</option>
+                    <option value="pink">Soft Pink</option>
+                    <option value="sage">Sage Green</option>
+                </select>
+
+                <hr>
+
+                <h3>Data</h3>
+
+                <button type="button" id="exportData">
+                    Export My Data
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- SEARCH WINDOW -->
+        <!-- ============================= -->
+
+        <section class="app-window" id="searchWindow">
+
+            <div class="window-header">
+                <span>🔎 Filing Cabinet</span>
+                <button class="close-button" id="closeSearch">X</button>
+            </div>
+
+            <div class="window-content">
+
+                <h2>Filing Cabinet</h2>
+
+                <p>Find something you've saved.</p>
+
+                <form id="searchForm">
+
+                    <label for="globalSearch">Search everything</label>
+
+                    <input
+                        type="search"
+                        id="globalSearch"
+                        name="search"
+                        placeholder="Search your memories..."
+                    >
+
+                    <label for="searchCategory">Filter by department</label>
+
+                    <select id="searchCategory">
+                        <option value="all">Everything</option>
+                        <option value="memories">Drop Box</option>
+                        <option value="people">People Drawer</option>
+                        <option value="someday">Someday Shelf</option>
+                        <option value="recommendations">Recommendation Box</option>
+                    </select>
+
+                    <button type="submit">Search</button>
+
+                </form>
+
+                <div id="searchResults">
+                    <p class="empty-message">Your search results will appear here.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- ============================= -->
+    <!-- TASKBAR -->
+    <!-- ============================= -->
+
+    <footer class="taskbar">
+
+        <button class="start-button" id="startButton">
+            <strong>▣</strong> Start
+        </button>
+
+        <div class="taskbar-divider"></div>
+
+        <div class="taskbar-clock" id="clock">
+            00:00
+        </div>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- START MENU -->
+    <!-- ============================= -->
+
+    <div class="start-menu" id="startMenu">
+
+        <div class="start-menu-title">
+            THE LITTLE THINGS DEPARTMENT
+        </div>
+
+        <div class="start-menu-items">
+
+            <p>✦ My Dashboard</p>
+            <p>✦ My Departments</p>
+            <p>✦ Filing Cabinet</p>
+            <p>✦ Settings</p>
+            <p>✦ Log Out</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <!-- Supabase library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

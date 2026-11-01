@@ -1,0 +1,622 @@
+
+/* ==========================================
+   THE LITTLE THINGS DEPARTMENT
+   CLASSIC WINDOWS 98 DESIGN
+========================================== */
+
+
+/* ==========================================
+   1. BASIC RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    overflow: hidden;
+    background-color: #008080;
+    color: #222;
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   2. DESKTOP
+========================================== */
+
+.desktop {
+    width: 100%;
+    height: 100vh;
+    background-color: #008080;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* DESKTOP HEADER */
+
+.desktop-header {
+    color: white;
+    margin-bottom: 35px;
+}
+
+.desktop-header h1 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.desktop-header p {
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   3. DESKTOP ICONS
+========================================== */
+
+.desktop-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.desktop-icon {
+    width: 110px;
+    min-height: 70px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 8px;
+    border: 1px solid transparent;
+    user-select: none;
+    transition: background-color 0.15s ease;
+}
+
+.desktop-icon:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+    border: 1px dotted white;
+}
+
+.desktop-icon:active {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.desktop-icon .icon {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.desktop-icon span {
+    font-size: 12px;
+    display: block;
+    text-shadow: 1px 1px 2px black;
+}
+
+
+/* ==========================================
+   4. APPLICATION WINDOWS
+========================================== */
+
+.app-window {
+    width: 430px;
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 100px);
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: white #404040 #404040 white;
+    position: absolute;
+    top: 140px;
+    left: 250px;
+    display: none;
+    z-index: 50;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+
+/* WINDOW TITLE BAR */
+
+.window-header {
+    min-height: 30px;
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 5px 7px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: move;
+    user-select: none;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-button {
+    background-color: #c0c0c0;
+    border: 2px outset white;
+    width: 22px;
+    height: 22px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+.close-button:active {
+    border-style: inset;
+}
+
+
+/* WINDOW CONTENT */
+
+.window-content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 150px);
+}
+
+.window-content h2 {
+    font-size: 19px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.window-content h3 {
+    font-size: 14px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.window-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================
+   5. FORMS
+========================================== */
+
+form {
+    margin-top: 18px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 13px;
+    margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 9px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 13px;
+    color: #222;
+    background-color: white;
+    border: 2px inset #d0d0d0;
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 1px dotted #000080;
+    outline-offset: -4px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 65px;
+}
+
+select {
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   6. BUTTONS
+========================================== */
+
+button {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.window-content button {
+    background-color: #c0c0c0;
+    border: 2px outset white;
+    padding: 8px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    color: #222;
+}
+
+.window-content button:hover {
+    background-color: #d6d6d6;
+}
+
+.window-content button:active {
+    border-style: inset;
+}
+
+
+/* ==========================================
+   7. DIVIDERS
+========================================== */
+
+hr {
+    border: none;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid white;
+    margin: 20px 0;
+}
+
+
+/* ==========================================
+   8. SAVED ITEMS AND EMPTY MESSAGES
+========================================== */
+
+.empty-message {
+    color: #666;
+    font-style: italic;
+    font-size: 12px;
+    padding: 12px;
+    background-color: #eeeeee;
+    border: 1px inset white;
+}
+
+#memoryList,
+#peopleList,
+#somedayList,
+#recommendationList,
+#searchResults {
+    margin-top: 12px;
+}
+
+.saved-item {
+    background-color: #fff;
+    border: 2px inset #d0d0d0;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.saved-item h4 {
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.saved-item p {
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+
+/* ==========================================
+   9. RANDOM RECALL
+========================================== */
+
+.recall-card {
+    background-color: #fff8dc;
+    border: 2px inset white;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 100px;
+}
+
+.recall-card p {
+    color: #444;
+}
+
+
+/* ==========================================
+   10. TASKBAR
+========================================== */
+
+.taskbar {
+    width: 100%;
+    height: 42px;
+    background-color: #c0c0c0;
+    border-top: 2px solid white;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+/* START BUTTON */
+
+.start-button {
+    height: 32px;
+    padding: 0 12px;
+    background-color: #c0c0c0;
+    border: 2px outset white;
+    font-family: Tahoma, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+    color: black;
+}
+
+.start-button:active {
+    border-style: inset;
+}
+
+
+/* TASKBAR DIVIDER */
+
+.taskbar-divider {
+    height: 28px;
+    width: 2px;
+    border-left: 1px solid #808080;
+    border-right: 1px solid white;
+    margin: 0 8px;
+}
+
+
+/* CLOCK */
+
+.taskbar-clock {
+    margin-left: auto;
+    padding: 6px 12px;
+    border: 2px inset white;
+    font-size: 12px;
+    color: black;
+}
+
+
+/* ==========================================
+   11. START MENU
+========================================== */
+
+.start-menu {
+    width: 245px;
+    background-color: #c0c0c0;
+    border: 2px outset white;
+    position: fixed;
+    bottom: 42px;
+    left: 4px;
+    z-index: 200;
+    display: none;
+}
+
+
+/* START MENU TITLE */
+
+.start-menu-title {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 15px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    min-height: 70px;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* START MENU ITEMS */
+
+.start-menu-items {
+    padding: 8px;
+}
+
+.start-menu-items p {
+    padding: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.start-menu-items p:hover {
+    background-color: #000080;
+    color: white;
+}
+
+
+/* ==========================================
+   12. SEARCH
+========================================== */
+
+#searchForm input {
+    margin-bottom: 5px;
+}
+
+#searchResults {
+    padding-top: 8px;
+}
+
+
+/* ==========================================
+   13. SETTINGS
+========================================== */
+
+#accountInformation {
+    background-color: white;
+    border: 2px inset #d0d0d0;
+    padding: 12px;
+    margin-top: 12px;
+}
+
+
+/* ==========================================
+   14. SCROLLBARS
+========================================== */
+
+.window-content::-webkit-scrollbar {
+    width: 16px;
+}
+
+.window-content::-webkit-scrollbar-track {
+    background-color: #c0c0c0;
+}
+
+.window-content::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border: 2px outset white;
+}
+
+
+/* ==========================================
+   15. RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .desktop {
+        padding: 18px;
+    }
+
+    .desktop-header h1 {
+        font-size: 19px;
+    }
+
+    .desktop-icons {
+        gap: 8px;
+    }
+
+    .desktop-icon {
+        width: 95px;
+    }
+
+    .desktop-icon .icon {
+        font-size: 27px;
+    }
+
+    .app-window {
+        width: calc(100vw - 24px);
+        max-width: none;
+        left: 12px;
+        top: 90px;
+        max-height: calc(100vh - 150px);
+    }
+
+    .window-content {
+        padding: 15px;
+        max-height: calc(100vh - 190px);
+    }
+
+    .start-menu {
+        width: 220px;
+    }
+
+}
+
+/* =========================================
+   AUTHENTICATION SCREEN
+========================================= */
+
+.auth-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.auth-window {
+    width: 420px;
+    max-width: 100%;
+    background-color: #c0c0c0;
+    border: 3px outset #ffffff;
+    box-shadow: 4px 4px 0 #333333;
+}
+
+.auth-content {
+    padding: 30px;
+}
+
+.auth-content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.auth-content > p {
+    margin-bottom: 24px;
+    color: #444444;
+}
+
+.auth-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth-content h3 {
+    margin-bottom: 8px;
+}
+
+.auth-content input {
+    width: 100%;
+    padding: 11px;
+    border: 2px inset #ffffff;
+    background-color: white;
+    font-size: 14px;
+}
+
+.auth-content label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.auth-content button {
+    padding: 10px 16px;
+    border: 2px outset white;
+    background-color: #c0c0c0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.auth-content button:hover {
+    background-color: #d5d5d5;
+}
+
+.auth-content form > button[type="submit"] {
+    margin-top: 12px;
+}
+
+.auth-content form p {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.auth-content form p button {
+    border: none;
+    background: transparent;
+    color: #000080;
+    text-decoration: underline;
+    padding: 3px;
+}
+
+#authMessage {
+    margin-top: 15px;
+    font-size: 13px;
+}
+.auth-content form[hidden] {
+    display: none;
+}
